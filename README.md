@@ -33,3 +33,7 @@ Uy::Rut.new.rut
 ## Contributing
 
 If you want to contribute to this project, just fork it, make your changes, run the tests and create a pull request. Also, feel free to report issues on the [issues section](issues).
+
+## Credits
+
+Thanks to @cschmeichel for facilitating the algorithms!
