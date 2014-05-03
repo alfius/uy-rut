@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "uy-rut"
-  spec.version       = '0.0.1'
+  spec.version       = '0.0.2'
   spec.authors       = ["Alfonso Cora"]
   spec.email         = ["acora6@gmail.com"]
   spec.description   = %q{Includes helper methods to validate Uruguayan company identification numbers (RUT)}

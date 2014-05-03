@@ -2,19 +2,15 @@ require 'uy/rut'
 
 describe Uy::Rut do
   describe 'validations' do
-    it { expect(Uy::Rut.new('')).not_to be_valid }
-    it { expect(Uy::Rut.new('asdf')).not_to be_valid }
-    it { expect(Uy::Rut.new('11222222008')).not_to be_valid }
-    it { expect(Uy::Rut.new('873332220087')).not_to be_valid }
-    it { expect(Uy::Rut.new('010111110022')).not_to be_valid }
-    it { expect(Uy::Rut.new('011011110029')).not_to be_valid }
-    it { expect(Uy::Rut.new('011101110028')).not_to be_valid }
-    it { expect(Uy::Rut.new('011110110027')).not_to be_valid }
-    it { expect(Uy::Rut.new('011111010026')).not_to be_valid }
-    it { expect(Uy::Rut.new('011111100025')).not_to be_valid }
-    it { expect(Uy::Rut.new('024445558811')).not_to be_valid }
-    it { expect(Uy::Rut.new('035557770088')).not_to be_valid }
-    it { expect(Uy::Rut.new('219223180010')).to be_valid }
+    it { expect(Uy::Rut.new('')).not_to be_valid }             # Empty
+    it { expect(Uy::Rut.new('asdf')).not_to be_valid }         # Non digits, wrong length
+    it { expect(Uy::Rut.new('11222222008')).not_to be_valid }  # Wrong length
+    it { expect(Uy::Rut.new('asdfasdfasdf')).not_to be_valid } # Non digits
+    it { expect(Uy::Rut.new('873332220087')).not_to be_valid } # Two first digits need to be in 1..21
+    it { expect(Uy::Rut.new('024445558811')).not_to be_valid } # Digits 8 and 9 need to be 0
+    it { expect(Uy::Rut.new('035557770088')).not_to be_valid } # Invalid check digit
+    it { expect(Uy::Rut.new('211003420017')).to be_valid }     # Antel
+    it { expect(Uy::Rut.new('211406340011')).to be_valid }     # Movistar
   end
 
   describe 'generation' do

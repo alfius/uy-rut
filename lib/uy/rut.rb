@@ -11,7 +11,6 @@ module Uy
     def is_valid?
       return false unless @rut =~ /\d{12}/
       return false unless (1..21) === @rut[0..1].to_i
-      (2..7).each {|pos| return false unless (1..9) === @rut[pos].to_i}
       return false unless @rut[8..9] == '00'
 
       begin
